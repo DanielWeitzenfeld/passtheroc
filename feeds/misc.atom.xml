@@ -1,2 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pass the ROC</title><link href="http://danielweitzenfeld.github.io/passtheroc/" rel="alternate"></link><link href="http://danielweitzenfeld.github.io/passtheroc/feeds/misc.atom.xml" rel="self"></link><id>http://danielweitzenfeld.github.io/passtheroc/</id><updated>2013-12-23T12:34:00-05:00</updated><entry><title>Building this blog</title><link href="http://danielweitzenfeld.github.io/passtheroc/blog.html" rel="alternate"></link><updated>2013-12-23T12:34:00-05:00</updated><author><name>Dan Weitzenfeld</name></author><id>tag:danielweitzenfeld.github.io,2013-12-23:passtheroc/blog.html</id><summary type="html">&lt;p&gt;{% notebook test.ipynb %}&lt;/p&gt;</summary></entry><entry><title>My super title</title><link href="http://danielweitzenfeld.github.io/passtheroc/my-super-post.html" rel="alternate"></link><updated>2010-12-03T10:20:00-05:00</updated><author><name>Me</name></author><id>tag:danielweitzenfeld.github.io,2010-12-03:passtheroc/my-super-post.html</id><summary type="html">&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;</summary><category term="thats"></category><category term="awesome"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pass the ROC</title><link href="http://danielweitzenfeld.github.io/passtheroc/" rel="alternate"></link><link href="http://danielweitzenfeld.github.io/passtheroc/feeds/misc.atom.xml" rel="self"></link><id>http://danielweitzenfeld.github.io/passtheroc/</id><updated>2013-12-23T12:34:00-05:00</updated><entry><title>Building this blog</title><link href="http://danielweitzenfeld.github.io/passtheroc/blog.html" rel="alternate"></link><updated>2013-12-23T12:34:00-05:00</updated><author><name>Dan Weitzenfeld</name></author><id>tag:danielweitzenfeld.github.io,2013-12-23:passtheroc/blog.html</id><summary type="html">&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="this-is-a-test-of-markdown-in-a-notebook"&gt;This is a test of markdown in a notebook&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[1]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;this is a test of some other shit&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+this is a test of some other shit
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>My super title</title><link href="http://danielweitzenfeld.github.io/passtheroc/my-super-post.html" rel="alternate"></link><updated>2010-12-03T10:20:00-05:00</updated><author><name>Me</name></author><id>tag:danielweitzenfeld.github.io,2010-12-03:passtheroc/my-super-post.html</id><summary type="html">&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;</summary><category term="thats"></category><category term="awesome"></category></entry></feed>
