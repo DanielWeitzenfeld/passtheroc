@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pass the ROC</title><link>http://danielweitzenfeld.github.io/passtheroc/</link><description></description><atom:link href="http://danielweitzenfeld.github.io/passtheroc/feeds/dan-weitzenfeld.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 23 Dec 2013 12:34:00 -0500</lastBuildDate><item><title>Building this blog</title><link>http://danielweitzenfeld.github.io/passtheroc/blog.html</link><description>&lt;p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pass the ROC</title><link>http://danielweitzenfeld.github.io/passtheroc/</link><description></description><atom:link href="http://danielweitzenfeld.github.io/passtheroc/feeds/dan-weitzenfeld.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 23 Dec 2013 12:34:00 -0500</lastBuildDate><item><title>Building this blog</title><link>http://danielweitzenfeld.github.io/passtheroc/blog/2013/12/23/blog/</link><description>&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -54,4 +54,4 @@ In&amp;nbsp;[]:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dan Weitzenfeld</dc:creator><pubDate>Mon, 23 Dec 2013 12:34:00 -0500</pubDate><guid>tag:danielweitzenfeld.github.io,2013-12-23:passtheroc/blog.html</guid></item></channel></rss>
+&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dan Weitzenfeld</dc:creator><pubDate>Mon, 23 Dec 2013 12:34:00 -0500</pubDate><guid>tag:danielweitzenfeld.github.io,2013-12-23:passtheroc/blog/2013/12/23/blog/</guid></item></channel></rss>
