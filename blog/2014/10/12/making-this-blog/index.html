@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Pass the ROC Archive </title>
+  <title>Making This Blog</title>
   <meta name="author" content="Dan Weitzenfeld">
 
 
@@ -1745,43 +1745,63 @@ jQuery(document).ready(function($) {
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Blog Archive</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Making This Blog</h1>
+      <p class="meta"><time datetime="2014-10-12T10:20:00" pubdate>Oct 12, 2014</time></p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2014</h2>
-                    <article>
-                        <h1><a href="blog/2014/10/12/datasci-sqlalchemy/">Why Data Scientists Should Use an ORM Like SQLAlchemy</a></h1>
-                        <time datetime="2014-10-12 10:20:00" pubdate>
-                            <span class="month">Oct</span>
-                            <span class="day">12</span>
-                            <span class="year">2014</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/.html'></a>
-                                
-                            </span>
-                        </footer>
-                    </article>
-                    <article>
-                        <h1><a href="blog/2014/10/12/making-this-blog/">Making This Blog</a></h1>
-                        <time datetime="2014-10-12 10:20:00" pubdate>
-                            <span class="month">Oct</span>
-                            <span class="day">12</span>
-                            <span class="year">2014</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/.html'></a>
-                                
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+  <div class="entry-content"><p>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The aesthetics of this blog make look familiar. That's because I shamelessly ripped off two python- and data- focused blogs that I read: <a href="http://twiecki.github.io">Thomas Wiecki's</a> and <a href="https://jakevdp.github.io">Jake VanderPlas's</a>. Both blogs use <a href="http://docs.getpelican.com/en/3.4.0/">pelican</a> with an aesthetically pleasing, easy-to-read <a href="https://github.com/duilio/pelican-octopress-theme">octopress theme</a>. As I looked into how Jake makes his blog, and saw that <a href="http://ocefpaf.github.io/python4oceanographers/">python4oceanographers</a> also used the same theme, I figured three makes a crowd that I could slinkily join. I won't do a soup-to-nuts how-to here because that's been done, and but I will provide three tips that would have saved me some time.</p>
+<h3 id="one-repo-or-two">One Repo or Two</h3>
+<p>One thing I puzzled over was whether to put everything in a single repo, or to put the source in one repo and the output in another. By 'source,' I mean the pelican code and the raw content that pelican converts into static html, and by 'output' I mean the static html. I ended up using two repos (<a href="https://github.com/DanielWeitzenfeld/passtheroc/tree/gh-pages">passtheroc</a> and <a href="https://github.com/DanielWeitzenfeld/passtheroc_source">passtheroc_source</a>) and I'm happy that I did.<br />When I want to see what preview what the site will look like, I run pelican without the <code>-o</code> option:</p>
+<pre><code>cd /Users/weitzenfeld/PycharmProjects/passtheroc_source
+pelican -s pelicanconf.py
+cd output
+python -m SimpleHTTPServer 8080</code></pre>
+<p>Pelican defaults to writing the html to a folder in the current directory called 'output.' (It was this default setting that initially confused me about whether to use one repo or two). So the above commands tell pelican to generate the html (using the settings in <code>pelicanconf.py</code>) and put in a folder called output. Then I switch the output folder and run a simple server, enabling me to preview my blog at http://localhost:8080.</p>
+<p>When I want to actually publish the site, I tell pelican to write the content to my 'output' repo, and to use the publish settings:</p>
+<pre><code>cd /Users/weitzenfeld/PycharmProjects/passtheroc_source
+pelican -o /Users/weitzenfeld/PycharmProjects/passtheroc -s publishconf.py
+cd /Users/weitzenfeld/PycharmProjects/passtheroc
+git add *
+git commit -m &#39;publishing the site&#39;
+git push</code></pre>
+<h3 id="githup-user-vs.-project-page">Githup user vs. project page</h3>
+<p>If you look at <a href="https://github.com/DanielWeitzenfeld/passtheroc/tree/gh-pages">passtheroc</a>, you'll notice that all the action is on the gh-pages branch. That's because I'm using a github project page, as described <a href="https://help.github.com/articles/user-organization-and-project-pages/">here</a>. Note that unless you want to get fancy, your repo name will be in your site url, so don't use 'freezing-octo-meme' or one of github's other suggestions for a repo name, unless that's the name of your blog.</p>
+<h3 id="nb_header.html-doesnt-exist">_nb_header.html doesn't exist</h3>
+<p>I hit a snag when trying to enable the IPython plugin. As noted in the <a href="https://github.com/jakevdp/pelican-plugins/tree/liquid_tags/liquid_tags">liquid tags readme</a>, you have to add this line to your pelicanconf.py:</p>
+<p><code>EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8')</code></p>
+<p>But when I ran <code>pelican content</code> or <code>make html</code>, I kept getting an error about _nb_header.html not existing. The solution for me was to tell pelican to ignore the cache:</p>
+<p><code>pelican content --ignore-cache</code></p>
+<h3 id="no-syntax-highlighting-in-ipython-code-cells">No Syntax Highlighting in IPython Code Cells</h3>
+<p>Make <a href="https://github.com/jfosorio/pelican-plugins/compare/getpelican:master...master">this</a> change and then run <code>pelican content --ignore-cache</code> again.</p>
+</div>
+</div>
+</div></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Me</span>
+  </span>
+<time datetime="2014-10-12T10:20:00" pubdate>Oct 12, 2014</time>  <span class="categories">
+    <a class="category" href="http://danielweitzenfeld.github.io/passtheroc/tag/python.html">python</a>
+    <a class="category" href="http://danielweitzenfeld.github.io/passtheroc/tag/pelican.html">pelican</a>
+  </span>
+</p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://danielweitzenfeld.github.io/passtheroc/blog/2014/10/12/making-this-blog/" data-via="weitzenfeld" data-counturl="http://danielweitzenfeld.github.io/passtheroc/blog/2014/10/12/making-this-blog/" >Tweet</a>
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
 </div>
 <aside class="sidebar">
   <section>
@@ -1828,6 +1848,9 @@ jQuery(document).ready(function($) {
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'passtheroc';
+          var disqus_identifier = '/blog/2014/10/12/making-this-blog/';
+          var disqus_url = 'http://danielweitzenfeld.github.io/passtheroc/blog/2014/10/12/making-this-blog/';
+          var disqus_title = 'Making This Blog';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
