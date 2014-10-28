@@ -38,6 +38,10 @@ function addSidebarToggler() {
   if (sections.length >= 3){ $('aside.sidebar').addClass('thirds'); }
 }
 
+function hideSidebar() {
+    $('body').addClass('collapse-sidebar');
+}
+
 function testFeatures() {
   var features = ['maskImage'];
   $(features).map(function(feature) {
@@ -123,6 +127,7 @@ $.domReady(function() {
   addCodeLineNumbers();
   getNav();
   addSidebarToggler();
+  hideSidebar();
 });
 
 // iOS scaling bug fix
