@@ -1759,8 +1759,8 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Last fall, I was listening to an episode of the <a href="http://espn.go.com/espnradio/podcast/archive?id=2864045">BS Report podcast</a> in which Bill Simmons and Cousin Sal were discussing the strength of different NFL teams. It was early in the season - week 3 or 4, maybe - and Bill made the point (I'm paraphrasing here) that your estimate of one team's strength depends on your estimate of all the others. The conclusions you draw from team X beating team Y depends how strong team Y is, which in turn depends on the conclusions you draw from team Y's other games, which in turn depends on how strong Y's opponents were, etc.</p>
-<p>It occurred to me that this problem is perfect for a bayesian model. We want to infer the latent paremeters (every team's strength) that are generating the data we observe (the scorelines). Moreover, we know that the scorelines are a noisy measurement of team strength, so ideally, we want a model that makes it easy to quantify our uncertainty about the underlying strengths.</p>
-<p>So I googled 'bayesian football' and found <a href="http://www.statistica.it/gianluca/Research/BaioBlangiardo.pdf">this paper</a>, called 'Bayesian hierarchical model for the prediction of football results.' The authors (Gianluca Baio and Marta A. Blangiardo) being Italian, though, the 'football' here is soccer.</p>
+<p>It occurred to me that this problem is perfect for a Bayesian model. We want to infer the latent paremeters (every team's strength) that are generating the data we observe (the scorelines). Moreover, we know that the scorelines are a noisy measurement of team strength, so ideally, we want a model that makes it easy to quantify our uncertainty about the underlying strengths.</p>
+<p>So I googled 'Bayesian football' and found <a href="http://www.statistica.it/gianluca/Research/BaioBlangiardo.pdf">this paper</a>, called 'Bayesian hierarchical model for the prediction of football results.' The authors (Gianluca Baio and Marta A. Blangiardo) being Italian, though, the 'football' here is soccer.</p>
 <p>In this post, I'm going to reproduce the first model described in the paper using pymc. While they used Seria A in their paper, I'm going to use the 2013-2014 Premier League.</p>
 <h2 id="getting-and-cleaning-the-data">Getting and cleaning the data</h2>
 <p>I got the data from <a href="http://en.wikipedia.org/wiki/2013–14_Premier_League">wikipedia</a>. I copied the 'Result Table' and saved it as a text file.</p>
@@ -3542,7 +3542,7 @@ height=370
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The intercept also looks good, and has an HDI that doesn't include zero, indicating that including an intercept was as a good idea:</p>
+<p>The intercept also looks good, and has an HDI that doesn't include zero, indicating that including an intercept was a good idea:</p>
 </div>
 </div>
 </div>
