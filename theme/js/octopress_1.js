@@ -39,7 +39,7 @@ function addSidebarToggler() {
 }
 
 function hideSidebar() {
-    console.log('foo');
+	console.log('foo');
     $('body').addClass('collapse-sidebar');
 }
 
@@ -122,6 +122,7 @@ function renderDeliciousLinks(items) {
 }
 
 $.domReady(function() {
+console.log('foo');
   testFeatures();
   wrapFlashVideos();
   flashVideoFallback();
@@ -129,6 +130,7 @@ $.domReady(function() {
   getNav();
   addSidebarToggler();
   hideSidebar();
+  console.log('foo');
 });
 
 // iOS scaling bug fix
