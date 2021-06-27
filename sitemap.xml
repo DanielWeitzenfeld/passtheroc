@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://danielweitzenfeld.github.io/passtheroc/</loc>
-<lastmod>2019-09-24T21:57:34-00:00</lastmod>
+<lastmod>2021-06-27T16:40:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://danielweitzenfeld.github.io/passtheroc/archives.html</loc>
-<lastmod>2019-09-24T21:57:34-00:00</lastmod>
+<lastmod>2021-06-27T16:40:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://danielweitzenfeld.github.io/passtheroc/tags.html</loc>
-<lastmod>2019-09-24T21:57:34-00:00</lastmod>
+<lastmod>2021-06-27T16:40:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://danielweitzenfeld.github.io/passtheroc/categories.html</loc>
-<lastmod>2019-09-24T21:57:34-00:00</lastmod>
+<lastmod>2021-06-27T16:40:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://danielweitzenfeld.github.io/passtheroc/pages/about.html</loc>
-<lastmod>2019-09-24T21:57:34-00:00</lastmod>
+<lastmod>2021-06-27T16:40:54-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
