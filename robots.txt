@@ -1,0 +1,4 @@
+Sitemap: http://danielweitzenfeld.github.io/passtheroc/sitemapindex.xml
+
+User-Agent: *
+Host: danielweitzenfeld.github.io
