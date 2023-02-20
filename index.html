@@ -98,7 +98,7 @@ bg-dark
 </h4>
 <p>My intuition was that the forecasting component would come down to correctly modeling volatility, not picking winners and losers.  I don't believe markets are perfectly efficient, but I also didn't believe a contest like this would attract or unearth a diamond-in-the-rough stock-picking talent.</p>
 <p>My next consideration was what frequency to model.  E.g., I could model daily or weekly returns, and just roll the daily or weekly forecast forward for a month.  But I quickly decided that I would start with the frequency of the competition, monthly.  The problem with modeling at a higher frequency is that any bias in the model will compound over the month.  Think of hitting a golf ball: if your angle is off by 1 degree, you'll sink a 1 foot putt but you'll miss a 30-footer.    (I did, however, include some features from daily return data - more on this later).</p>
-<p>I knew off the bat that I'd use pymc. Given that I was using pymc, and I knew I had to model the covariance of 100 assets, I landed on probabilistic PCA as the scaffolding for my model.  I had used it with some success in other, similar applications; PCA is often used in econometric modeling to reduce the dimensionality of the hundreds of macroeconomic data series available.</p>
+<p>I knew off the bat that I'd use <a href="https://www.pymc.io/welcome.html">pymc</a> to build a Bayesian model.  Bayesian models are built to quantify uncertainty, and probabilistic programming languages like pymc make building complicated Bayesian models easy.  Given the challenge was to model the covariance of 100 assets, I landed on probabilistic PCA as the scaffolding for my model.  I had used it with some success in other, similar applications; PCA is often used in econometric modeling to reduce the dimensionality of the hundreds of macroeconomic data series available.  But I knew I'd need to add some additional bells and whistles for this problem.</p>
 
 </div>
 </div>
@@ -108,7 +108,7 @@ bg-dark
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Modeling-$%5Cmu_i$">Modeling $\mu_i$<a class="anchor-link" href="posts/m6.html#Modeling-%24%5Cmu_i%24">¶</a>
+<h4 id="Modeling-$%5Cmu$">Modeling $\mu$<a class="anchor-link" href="posts/m6.html#Modeling-%24%5Cmu%24">¶</a>
 </h4>
 <p>The $\mu_i$ for each asset $i$ is the sum of:</p>
 <ul>
