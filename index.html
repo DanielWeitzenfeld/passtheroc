@@ -97,8 +97,8 @@ bg-dark
 <h4 id="Initial-thoughts">Initial thoughts<a class="anchor-link" href="posts/m6.html#Initial-thoughts">¶</a>
 </h4>
 <p>My intuition was that the forecasting component would come down to correctly modeling volatility, not picking winners and losers.  I don't believe markets are perfectly efficient, but I also didn't believe a contest like this would attract or unearth a diamond-in-the-rough stock-picking talent.</p>
-<p>My next consideration was what frequency to model.  E.g., I could model daily or weekly returns, and just roll the daily or weekly forecast forward for a month.  But I quickly decided that I would start with the frequency of the competition, monthly.  The problem with modeling at a higher frequency is that any bias in the model will compound over the month.  Think of hitting a golf ball: if your angle is off by 1 degree, you'll sink a 1 foot put but you'll miss a 30-footer.    (I did, however, include some features from daily return data - more on this later).</p>
-<p>I knew off the bat that I'd use pymc. Given that I was using pymc, and I knew I had to model the covariance of 100 assets, I landed on probabilistic PCA (hereafter PPCA) as the scaffolding for my model.  I had used it with some success in other, similar applications; PCA is often used in econometric modeling to reduce the dimensionality of the hundreds of macroeconomic data series available.</p>
+<p>My next consideration was what frequency to model.  E.g., I could model daily or weekly returns, and just roll the daily or weekly forecast forward for a month.  But I quickly decided that I would start with the frequency of the competition, monthly.  The problem with modeling at a higher frequency is that any bias in the model will compound over the month.  Think of hitting a golf ball: if your angle is off by 1 degree, you'll sink a 1 foot putt but you'll miss a 30-footer.    (I did, however, include some features from daily return data - more on this later).</p>
+<p>I knew off the bat that I'd use pymc. Given that I was using pymc, and I knew I had to model the covariance of 100 assets, I landed on probabilistic PCA as the scaffolding for my model.  I had used it with some success in other, similar applications; PCA is often used in econometric modeling to reduce the dimensionality of the hundreds of macroeconomic data series available.</p>
 
 </div>
 </div>
@@ -116,7 +116,7 @@ bg-dark
 <li>$\beta_{recent\_returns_i}$ multiplied by the asset's return in the final week of the prior month.  These betas were drawn from one of three heirarchical distributions: one for stocks, one for equity ETFs, and one for fixed-income ETFs (hereafter "asset classes").</li>
 <li>an asset-specific intercept, $\alpha_i$. In practice, these were all near zero because the rest of the model explained most of the variance.</li>
 </ul>
-<p>The AR coefficient for the factors was slightly negative, and this puzzled me for a long while. It turns out I had stumbled across the <a href="https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr513.pdf">short-term reversal anomaly</a>.</p>
+<p>The AR coefficient for the factors was slightly negative, and this puzzled me for a long while. It turns out I had stumbled across the short-term reversal anomaly - see <a href="https://quantpedia.com/strategies/short-term-reversal-in-stocks/">here</a> or <a href="https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr513.pdf">here</a>.</p>
 <p>The remainder of the model is for the noise around $\mu$, which is symmetric.  This means that the only mechanisms by which the model could independently forecast "winners and losers" are the three above: factor dynamics (effectively short-term reversal); returns in the last week of the prior month; and asset-specific intercepts.  As a result, the model's forecasts were nearly symmetric: the probability of an asset being in the bottom quantile was close to the probability of it being in the top quantile.</p>
 
 </div>
@@ -145,7 +145,7 @@ bg-dark
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Benefits-of-probablistic-forecasting">Benefits of probablistic forecasting<a class="anchor-link" href="posts/m6.html#Benefits-of-probablistic-forecasting">¶</a>
+<h4 id="From-posterior-samples-to-a-forecast">From posterior samples to a forecast<a class="anchor-link" href="posts/m6.html#From-posterior-samples-to-a-forecast">¶</a>
 </h4>
 <p>One benefit of using a tool like pymc to make forecasts is that in many cases, <em>inference (or sampling) is forecasting.</em>  Just pass missing data to the observed variable, and pymc performs automatic imputation.  The future is, of course, missing, so I passed it in and got 4000 samples from the posterior distribution of the future, conditional on the data we have observed and, of course, on my model being the correct one.</p>
 <p>A second benefit revealed itself midway through the competition when one of the 100 assets (DRE) went defunct.  The organizers said they would handle it by <del>forgetting about DRE</del> pretending DRE had a return of zero in each remaining month.  This was easy for me to account for: all I did was set DRE's return to zero in each of the 4000 samples before taking the quantile probabilities.</p>
@@ -174,7 +174,7 @@ bg-dark
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Closing-thoughts">Closing thoughts<a class="anchor-link" href="posts/m6.html#Closing-thoughts">¶</a>
 </h4>
-<p>The M6 competition had quarterly prizes as well.  I did not win any.  It takes many draws to assess the quality of probabilistic forecasting.  Indeed, perhaps this 12-month period is a flash in the pan for my model, and in an alternate universe where the competition was 24 months instead of 12, I have no blog post to write.</p>
+<p>The M6 competition had quarterly prizes as well.  I did not win any.  Indeed, among the top 3 for the year-long forecasting, none of us placed in any of the quarters. None of the quarterly winners placed more than once. It takes many draws to assess the quality of probabilistic forecasting.</p>
 
 </div>
 </div>

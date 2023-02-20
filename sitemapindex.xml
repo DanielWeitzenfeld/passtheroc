@@ -6,15 +6,11 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>http://danielweitzenfeld.github.io/passtheroc/galleries/rss.xml</loc>
-  <lastmod>2023-02-20T16:52:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://danielweitzenfeld.github.io/passtheroc/rss.xml</loc>
-  <lastmod>2023-02-20T16:26:00Z</lastmod>
+  <lastmod>2023-02-20T17:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://danielweitzenfeld.github.io/passtheroc/sitemap.xml</loc>
-  <lastmod>2023-02-20T17:00:00Z</lastmod>
+  <lastmod>2023-02-20T17:42:00Z</lastmod>
  </sitemap>
 </sitemapindex>
